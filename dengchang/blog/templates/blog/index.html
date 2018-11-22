@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}" />
+    {% if auth_article_list %}
+        <ul>
+        {% for article in auth_article_list %}
+            <li><a href="{% url 'blog: blog_detil' article.id %}">{{article.title}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>暂时还没有东西！</p>
+    {% endif %}
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>{{ auth.username }}</h1>
+    <div>
+        <label>文章：</label>
+        <strong>{{ auth.article_set.count }}</strong>
+    </div>
+    <a href="{% url 'blog: bbt_blog' %}">写作</a><br/>
+    <a href="{% url 'blog: auth_blogs' auth.id %}">文集成果列表</a>
+</body>
+</html>

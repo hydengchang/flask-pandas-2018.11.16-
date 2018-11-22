@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>添加内容</h1>
+    {% if error_message %}
+    <p><strong>{{error_message}}</strong></p>
+    {% endif %}
+    <form action="{% url 'blog:save_blog' %}" method="post">
+    {% csrf_token %}<!-- 用于针对内部URL的post表单模块标签 -->
+        <label>标题：</label>
+        <input type="text" name="title"><br/>
+        <label>内容：</label><br/>
+        <textarea cols="30" rows="3" name="content"></textarea><br/>
+        <input type="submit" value="确认">
+    </form>
+</body>
+</html>

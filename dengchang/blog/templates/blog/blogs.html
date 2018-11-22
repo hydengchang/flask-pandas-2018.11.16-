@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    {% if latest_article_list %}
+    <h3>作者文集：</h3>
+    <ul>
+        {% for article in latest_article_list %}
+        <li><a href="{% url 'blog: blog_detil' article.id %}">
+            {{ article.title }}
+        </a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>懒得很嘛，还不做贡献！</p>
+    {% endif %}
+</body>
+</html>

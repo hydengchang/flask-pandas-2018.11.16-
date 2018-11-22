@@ -1,0 +1,9 @@
+li a{
+    color: red;
+} 
+p{
+    color: blue;
+}
+body{
+    background: #eee url('image/Penguins.jpg') no-repeat;
+}
